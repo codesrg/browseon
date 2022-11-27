@@ -3,8 +3,7 @@ import sys
 import argparse
 from srutil import util
 
-from online import browse
-__version__, __package__ = '',''
+from . import browse, __version__, __package__
 
 
 def get_argument():
