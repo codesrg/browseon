@@ -1,19 +1,19 @@
-# Online
+# browseon
 
-[![PyPI](https://img.shields.io/pypi/v/online)](https://pypi.python.org/pypi/online)
-[![Pypi - License](https://img.shields.io/github/license/codesrg/online)](https://github.com/codesrg/online/blob/main/LICENSE)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/online?color=red)](https://pypi.python.org/pypi/online)
+[![PyPI](https://img.shields.io/pypi/v/browseon)](https://pypi.python.org/pypi/browseon)
+[![Pypi - License](https://img.shields.io/github/license/codesrg/browseon)](https://github.com/codesrg/browseon/blob/main/LICENSE)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/browseon?color=red)](https://pypi.python.org/pypi/browseon)
 
 To browse web.
 
 ## Installation
 
-`pip install -U online`
+`pip install -U browseon`
 
 ## Usage
 
 ```
-usage: online [options]
+usage: browseon [options]
 
 optional arguments:
   -h, --help     show this help message and exit
@@ -30,10 +30,10 @@ to browse web:
 To browse web.
 
 ```python
-from online import browse
+from browseon import browse
 
 browse.open('scheme://sub-domain.domain.top-level-domain/')  # to open url
-browse.search("pypi online")  # to search query
+browse.search("pypi browseon")  # to search query
 ```
 
 ### Command Line
@@ -41,10 +41,10 @@ browse.search("pypi online")  # to search query
 To search in web browser.
 
 ```
-$ online --query "pypi online"
+$ browseon --query "pypi browseon"
 ```
 
 ## Issues:
 
-If you encounter any problems, please file an [issue](https://github.com/codesrg/online/issues) along with a detailed
+If you encounter any problems, please file an [issue](https://github.com/codesrg/browseon/issues) along with a detailed
 description.

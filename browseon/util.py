@@ -1,10 +1,9 @@
 from __future__ import annotations
 
 import urllib.request
-from srutil import util
-from pathlib import Path
 from urllib.parse import urlparse
-from configparser import ConfigParser
+
+from srutil import util
 
 
 class OnlineException(Exception):
@@ -21,11 +20,9 @@ def encoded_query(_query: str) -> str:
 
 
 def get_baseurl_for(web_engine: str) -> str:
-    ini_path = Path(__file__ + "/../config/config.ini").absolute()
-    engine = config(ini_path, "web-engine")
-    base_url = util.stringbuilder(engine.get("base-url"), "/?",
-                                  config(ini_path, "url-param", "base-url"), "=",
-                                  engine.get(web_engine))
+    engine = {"base-url": "duck.co", "duckduckgo": "!?", "wikipedia": "!w", "yandex": "!yri",
+              "youtube": "!yt", "google": "!g", "qwant": "!qw", "yahoo": "!y", "bing": "!b"}
+    base_url = util.stringbuilder(engine.get("base-url"), "/?q=", engine.get(web_engine))
     return base_url
 
 
@@ -36,12 +33,3 @@ def is_valid_url(url: str) -> bool:
         return all([result.scheme, result.netloc, result.path]) and response.code < 400
     else:
         raise OnlineException("Invalid URL.")
-
-
-def config(file, section, key=None) -> dict | str:
-    parser = ConfigParser()
-    parser.read(file)
-    items = dict(parser.items(section))
-    if key:
-        return items.get(key)
-    return items
