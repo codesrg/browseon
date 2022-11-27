@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "online"
+version = "1.0.0"
+description = "To browse web."
+readme = "README.md"
+requires-python = ">=3.6"
+license = { text = "Apache License, Version 2.0" }
+authors = [
+    { name = "srg", email = "srg.code@pm.me" },
+]
+dependencies = [
+    "srutil"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+]
+keywords = [
+    "online",
+    "web search"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/codesrg/online"
+"Bug Tracker" = "https://github.com/codesrg/online/issues"
+
+[project.scripts]
+online = "online.__main__:main"
